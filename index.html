@@ -230,10 +230,14 @@
             e.preventDefault();
             escapeNo();
         });
+        // Add touch support for mobile
+        noBtn.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            escapeNo();
+        });
 
         // Yes button action
         function yesClicked() {
-            // You can customize this part a lot
             document.body.innerHTML = `
         <div style="
           height:100vh;
@@ -245,14 +249,15 @@
           font-family: 'Dancing Script', cursive;
           color:#c2185b;
           text-align:center;
-          padding:30px;
+          padding:20px;
+          overflow: hidden;
         ">
-          <h1 style="font-size:7rem;margin-bottom:1rem;">YESSS!!! 🥰💖</h1>
-          <p style="font-size:2.8rem; max-width:90%;">
+          <h1 style="font-size:clamp(3.5rem, 12vw, 7rem); margin-bottom:1rem; line-height: 1.1;">YESSS!!! 🥰💖</h1>
+          <p style="font-size:clamp(1.5rem, 5vw, 2.8rem); max-width:90%; line-height: 1.4;">
             I love you so much ${'Helene'}!<br>
             Best Valentine's Day ever starts now ♡
           </p>
-          <div style="font-size:6rem; margin:2rem 0;">💐🌸💕🌷💞</div>
+          <div style="font-size:clamp(3rem, 10vw, 6rem); margin:2rem 0;">💐🌸💕🌷💞</div>
         </div>
       `;
         }
